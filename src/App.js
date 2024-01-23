@@ -19,12 +19,25 @@ export default function App() {
   }, [dice])
 
   function generateNewDie() {
+
+    const value = Math.ceil(Math.random() * 6)
+
+    console.log(value);
     return {
-      value: Math.ceil(Math.random() * 6), 
+      value: value,
+      topLeft: value === 6 || value === 5 || value === 4 ? true : false, 
+      topCenter: value === 6 ? true : false, 
+      topRight: value === 6 || value === 5 || value === 4 || value === 3 || value === 2 ? true : false, 
+      center: value === 5 ||  value === 3 || value === 1 ? true : false,
+      bottomLeft: value === 6 || value === 5 || value === 4 || value === 3 || value === 2 ? true : false, 
+      bottomCenter: value === 6 ? true : false, 
+      bottomRight: value === 6 || value === 5 || value === 4 ? true : false, 
       isHeld: false,
       id: nanoid()
     }
   }
+
+  console.log(dice);
 
   function allNewDice() {
     const newDice = []
@@ -54,7 +67,15 @@ export default function App() {
   }
   
   const diceElements = dice.map(die => 
-    <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
+    <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} 
+      topLeft={die.topLeft} 
+      topCenter={die.topCenter} 
+      topRight={die.topRight} 
+      center={die.center} 
+      bottomLeft={die.bottomLeft} 
+      bottomCenter={die.bottomCenter} 
+      bottomRight={die.bottomRight}
+    />)
 
     return (
         <main>
