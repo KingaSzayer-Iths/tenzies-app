@@ -1,13 +1,48 @@
 import React from "react"
+// import moment from "moment"
 import Die from "./Die"
 // import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
 import { nanoid } from 'nanoid'
+// import 'react-native-get-random-values'
 import Confetti from "react-confetti"
+
+// let date_create = moment().format("YYYY-MM-DD hh:mm:ss")
 
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice())
   const [tenzies, setTenzies] = React.useState(false)
   const [counter, setCounter] = React.useState(0)
+  const [lowestRolls, setLowestRolls] = React.useState(() => {
+    const saved = localStorage.getItem("lowestRolls");
+    const initialValue = JSON.parse(saved);
+    return initialValue || -1;
+  });
+  
+
+  // const [time, setTime] = React.useState(0);
+  // const [bestTime, setBestTime] = React.useState(
+  //   localStorage.getItem('bestTime') || Infinity)
+
+  
+    // const [time, setTime] = React.useState(0);
+    // const [bestTime, setBestTime] = React.useState(
+    //   localStorage.getItem('bestTime') || Infinity
+    // );
+
+    // React.useEffect(() => {
+    //   setTime((prevTime) => prevTime + 1);
+    // }, 1000);
+    // return () => clearInterval(interval);  
+    // }, [])
+
+  //   React.useEffect(() => {
+  //     if (counter < bestTime) {
+  //       setBestTime(counter);
+  //       localStorage.setCounter('bestTime', counter.toString());
+  //     }
+  //   }, [counter, bestTime])
+
+    
 
   React.useEffect(() => {
     const allHeld = dice.every(die => die.isHeld)
@@ -15,8 +50,19 @@ export default function App() {
     const allSameValue = dice.every(die => die.value === firstValue)
     if (allHeld && allSameValue) {
       setTenzies(true)
+      if (lowestRolls === -1 || counter < lowestRolls)
+      setLowestRolls(counter)
+      // if (counter < bestTime) {
+      //   setBestTime(counter)
+      // }
     }
-  }, [dice])
+  }, [dice, counter, lowestRolls])
+
+  React.useEffect(() => {
+    localStorage.setItem("lowestRolls", JSON.stringify(lowestRolls));
+  }, [lowestRolls]);
+
+  
 
   function generateNewDie() {
 
@@ -82,7 +128,19 @@ export default function App() {
         {/* Link to confetti https://www.npmjs.com/package/react-confetti */}
         {tenzies && <Confetti numberOfPieces={2000} colors={['#FFFFFF']} />}
         <h1 className="title">Tenzies</h1>
-        <h2>{counter}</h2>
+
+        <div className="score">
+          <div>Best score: {lowestRolls > -1 ? lowestRolls : ''}</div>
+          <div>Rolls: {counter}</div>
+        </div>
+
+
+        {/* <div>
+          <p>Time: {counter} seconds</p>
+          <p>Best Time: {bestTime === Infinity ? 'N/A' : `${bestTime} seconds`}</p>
+          {counter}
+        </div> */}
+
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           <div className="dice-container">
             {diceElements}

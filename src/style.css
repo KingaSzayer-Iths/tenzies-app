@@ -81,12 +81,12 @@ main {
   background-color: red;
 }  */
 
-.xdie-num {
+/* .die-num {
   font-size: 2rem;
   color: #9286df;
 }
 
-.xdice-num {
+.dice-num {
   position: relative;
   width: 100px;
   height: 100px;
@@ -95,7 +95,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-}
+} */
 
 .dot {
   width: 9px;
@@ -163,7 +163,6 @@ main {
   font-size: 1.2rem;
   font-family: 'Karla', sans-serif;
   cursor: pointer;
-
 }
 
 .roll-dice:focus {
@@ -172,6 +171,26 @@ main {
 
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.score div {
+  height: 40px;
+  width: 120px;
+  /* border: none; */
+  border: #6904b7 solid 1px;
+  border-radius: 6px;
+  background-color: #c2bcec;
+  color: rgb(20, 19, 19);
+  font-size: 1.1rem;
+  font-family: 'Karla', sans-serif;
+  display: flex;
+
+  /* flex-direction: row; */
+  /* display: grid; */
+  /* grid-template: auto / repeat(5, 1fr); */
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 
