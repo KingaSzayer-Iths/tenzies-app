@@ -175,7 +175,7 @@ main {
 
 .score div {
   height: 40px;
-  width: 120px;
+  width: 125px;
   /* border: none; */
   border: #6904b7 solid 1px;
   border-radius: 6px;
@@ -187,10 +187,12 @@ main {
 
   /* flex-direction: row; */
   /* display: grid; */
-  /* grid-template: auto / repeat(5, 1fr); */
-  gap: 15px;
+  grid-template: auto / repeat(4, 1fr);
+  margin: 10px;
+  /* gap: 15px; */
   align-items: center;
-  justify-content: center;
+  padding: 5px;
+  /* justify-content: center; */
 }
 
 
