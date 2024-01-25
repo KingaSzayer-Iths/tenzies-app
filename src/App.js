@@ -125,8 +125,9 @@ export default function App() {
 
     return (
         <main>
-        {/* Link to confetti https://www.npmjs.com/package/react-confetti */}
-        {tenzies && <Confetti numberOfPieces={2000} colors={['#FFFFFF']} />}
+        {/* Link to confetti https://www.npmjs.com/package/react-confetti
+        colors={['#f44336''#e91e63','#9c27b0','#673ab7','#3f51b5','#2196f3','#03a9f4','#00bcd4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548']} */}
+        {tenzies && <Confetti numberOfPieces={2000} colors={['#FFFFFF','#3f51b5','#2196f3','#03a9f4','#673ab7']} />}
         <h1 className="title">Tenzies</h1>
 
         <div className="score">
