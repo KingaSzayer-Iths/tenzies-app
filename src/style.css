@@ -201,9 +201,9 @@ main {
 
 .button-score {
   display: inline-block;
-  margin: 15px;
+  margin: 10px;
   height: 35px;
-  width: 140px;
+  width: 155px;
   border: #6904b7 solid 1px;
   border-radius: 6px;
   background-color: #c2bcec;
