@@ -157,7 +157,8 @@ main {
   width: 150px;
   border: none;
   border-radius: 6px;
-  background-color: #5035FF;
+  /* background-color: #5035FF; */
+  background-image: linear-gradient(to right, rgb(25, 0, 255) , rgb(170, 175, 246));
   /* background-color: #d1ccf6; */
   color: white;
   font-size: 1.2rem;
@@ -173,10 +174,9 @@ main {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
-.score div {
+.xscore div {
   height: 40px;
-  width: 125px;
-  /* border: none; */
+  width: 130px;
   border: #6904b7 solid 1px;
   border-radius: 6px;
   background-color: #c2bcec;
@@ -184,15 +184,32 @@ main {
   font-size: 1.1rem;
   font-family: 'Karla', sans-serif;
   display: flex;
+  gap: 25px;
+  grid-template: auto / repeat(4, 1fr);
+  margin: 10px;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
 
   /* flex-direction: row; */
   /* display: grid; */
-  grid-template: auto / repeat(4, 1fr);
-  margin: 10px;
-  /* gap: 15px; */
-  align-items: center;
-  padding: 5px;
-  /* justify-content: center; */
+}
+
+.score {
+  text-align: center;
+}
+
+.button-score {
+  display: inline-block;
+  margin: 15px;
+  height: 35px;
+  width: 130px;
+  border: #6904b7 solid 1px;
+  border-radius: 6px;
+  background-color: #c2bcec;
+  color: rgb(20, 19, 19);
+  font-size: 1.1rem;
+  /* font-family: 'Karla', sans-serif; */
 }
 
 

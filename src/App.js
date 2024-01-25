@@ -130,8 +130,8 @@ export default function App() {
         <h1 className="title">Tenzies</h1>
 
         <div className="score">
-          <div>Best score: {lowestRolls > -1 ? lowestRolls : ''}</div>
-          <div>Rolls: {counter}</div>
+          <button className="button-score">Best score: {lowestRolls > -1 ? lowestRolls : ''}</button>
+          <button className="button-score">Rolls: {counter}</button>
         </div>
 
 
