@@ -48,7 +48,7 @@ main {
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
-  gap: 17px;
+  gap: 20px;
   /* margin-bottom: 40px; */
   margin: 20px 10px 40px 10px;
 }
@@ -218,6 +218,9 @@ main {
 
 .roll-dice {
   height: 55px;
+}
+.dice-container {
+  gap: 15px;
 }
 
 }
