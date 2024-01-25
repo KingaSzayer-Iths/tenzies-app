@@ -129,6 +129,7 @@ export default function App() {
         colors={['#f44336''#e91e63','#9c27b0','#673ab7','#3f51b5','#2196f3','#03a9f4','#00bcd4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548']} */}
         {tenzies && <Confetti numberOfPieces={2000} colors={['#FFFFFF','#3f51b5','#2196f3','#03a9f4','#673ab7']} />}
         <h1 className="title">Tenzies</h1>
+        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
 
         <div className="score">
           <button className="button-score">Best score: {lowestRolls > -1 ? lowestRolls : ''}</button>
@@ -142,7 +143,6 @@ export default function App() {
           {counter}
         </div> */}
 
-        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
           <div className="dice-container">
             {diceElements}
           </div>
